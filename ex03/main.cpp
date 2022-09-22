@@ -16,6 +16,7 @@ int main()
 			Intern Amy;
 			Form *form = Amy.makeForm("presidential pardon", "Arbeitsamt");
 			std::cout << "I am a " << form->getName() << std::endl;
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
@@ -31,6 +32,7 @@ int main()
 			Intern Amy;
 			Form *form = Amy.makeForm("robotomy request", "Arbeitsamt");
 			std::cout << "I am a " << form->getName() << std::endl;
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
@@ -46,6 +48,7 @@ int main()
 			Intern Amy;
 			Form *form = Amy.makeForm("shrubbery creation", "Arbeitsamt");
 			std::cout << "I am a " << form->getName() << std::endl;
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
@@ -61,6 +64,7 @@ int main()
 			Intern Amy;
 			Form *form = Amy.makeForm("blablabla", "Arbeitsamt");
 			std::cout << "I am a " << form->getName() << std::endl;
+			delete form;
 		}
 		catch (const std::exception &e)
 		{
