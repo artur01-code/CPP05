@@ -48,5 +48,10 @@ Form *Intern::makeForm(std::string const &name, std::string const &target)
 		}
 	}
 	std::cout << "Form with a name: \"" << name << "\", doesnt exist" << std::endl;
-	return (NULL);
+	throw Intern::FormDoesNotExistException();
+};
+
+const char* Intern::FormDoesNotExistException::what() const throw()
+{
+	return ("* Form doesn't exist *");
 };

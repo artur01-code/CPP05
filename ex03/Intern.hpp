@@ -14,6 +14,12 @@ class Intern
 	Form *makeShrubbery(std::string target);
 	Form *makeRobotomy(std::string target);
 	Form *makePresidential(std::string target);
+
+	class FormDoesNotExistException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
 };
 
 #endif
