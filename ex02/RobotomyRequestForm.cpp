@@ -10,6 +10,20 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 
 };
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs) : Form(rhs), _target(rhs._target)
+{
+	std::cout << "RobotomyRequestForm copy constructor" << std::endl;
+};
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+	delete this;
+	RobotomyRequestForm *dings = new RobotomyRequestForm(rhs);
+	dings->_target = rhs._target;
+	std::cout << "RobotomyRequestForm copy assigment operator" << std::endl;
+	return (*dings);
+};
+
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
 

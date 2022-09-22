@@ -10,6 +10,20 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presi
 
 };
 
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs) : Form(rhs), _target(rhs._target)
+{
+	std::cout << "PresidentialPardonForm copy constructor" << std::endl;
+};
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+{
+	delete this;
+	PresidentialPardonForm *dings = new PresidentialPardonForm(rhs);
+	dings->_target = rhs._target;
+	std::cout << "PresidentialPardonForm copy assigment operator" << std::endl;
+	return (*dings);
+};
+
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
 

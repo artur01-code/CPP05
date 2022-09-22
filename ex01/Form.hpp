@@ -11,6 +11,8 @@ class Form
 	public:
 		Form(void);
 		Form(std::string name, const int gradeToSign, const int gradeToExecute);
+		Form(const Form &rhs);
+		Form &operator=(const Form &rhs);
 		~Form(void);
 
 	private:

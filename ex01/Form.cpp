@@ -18,6 +18,19 @@ Form::Form(std::string name, const int gradeToSign, const int gradeToExecute) : 
 	std::cout << "Form default constructor with attributes" << std::endl;
 };
 
+Form::Form(const Form &rhs) : _name(rhs._name), _signed(rhs._signed), _gradeToSign(rhs._gradeToSign), _gradeToExecute(rhs._gradeToExecute)
+{
+	std::cout << "Form default copy constructor" << std::endl;
+};
+
+Form & Form::operator=(const Form &rhs)
+{
+	delete this;
+	Form *dings = new Form(rhs);
+	std::cout << "Form default assigment operator" << std::endl;
+	return (*dings);
+};
+
 Form::~Form(void)
 {
 	std::cout << "Form default destructor" << std::endl;

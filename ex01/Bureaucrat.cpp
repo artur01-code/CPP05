@@ -19,16 +19,17 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	std::cout << "Bureaucrat default constructor with attributes" << std::endl;
 };
 
-Bureaucrat::Bureaucrat(Bureaucrat &rhs) : _name(rhs._name), _grade(rhs._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs._name), _grade(rhs._grade)
 {
 	std::cout << "Bureaucrat default copy constructor" << std::endl;
 };
 
-Bureaucrat& Bureaucrat::operator=(Bureaucrat &rhs)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-	this->_grade = rhs.getGrade();
+	delete this;
+	Bureaucrat *dings = new Bureaucrat(rhs);
 	std::cout << "Bureaucrat copy assigment operator" << std::endl;
-	return (*this);
+	return (*dings);
 };
 
 Bureaucrat::~Bureaucrat(void)
@@ -36,7 +37,7 @@ Bureaucrat::~Bureaucrat(void)
 	std::cout << "Bureaucrat default destructor" << std::endl;
 };
 
-const std::string Bureaucrat::getName(void)
+const std::string Bureaucrat::getName(void) const
 {
 	return (this->_name);
 };
