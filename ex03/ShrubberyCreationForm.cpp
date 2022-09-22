@@ -10,6 +10,20 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 
 };
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs) : Form(rhs), _target(rhs._target)
+{
+	std::cout << "ShrubberyCreationForm copy constructor" << std::endl;
+};
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
+{
+	delete this;
+	ShrubberyCreationForm *dings = new ShrubberyCreationForm(rhs);
+	dings->_target = rhs._target;
+	std::cout << "ShrubberyCreationForm copy assigment operator" << std::endl;
+	return (*dings);
+};
+
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
 
