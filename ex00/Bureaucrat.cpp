@@ -25,10 +25,10 @@ Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs._name), _grade(rhs._gr
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-	delete this;
-	Bureaucrat *dings = new Bureaucrat(rhs);
+	// this->_name = rhs.getName();
+	this->_grade = rhs.getGrade();
 	std::cout << "Bureaucrat copy assigment operator" << std::endl;
-	return (*dings);
+	return (*this);
 };
 
 Bureaucrat::~Bureaucrat(void)

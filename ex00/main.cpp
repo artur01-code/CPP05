@@ -2,6 +2,12 @@
 
 int main()
 {
+	{
+		Bureaucrat peter;
+		Bureaucrat peter2("anderer", 142);
+		peter = peter2;
+		std::cout << peter.getName() << " " << peter.getGrade() << std::endl;
+	}
 	std::cout << std::string(25, '-') << "TEST 1" << std::string(25, '-') << std::endl;
 	{
 		try 
